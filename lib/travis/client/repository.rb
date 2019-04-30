@@ -138,6 +138,7 @@ module Travis
       end
 
       def set_hook(flag)
+        p [:hook, id, flag]
         result = session.put_raw('/hooks/', :hook => { :id => id, :active => flag })
         result['result']
       end
